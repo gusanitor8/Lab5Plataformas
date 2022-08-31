@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.affirmations.R
 import com.example.affirmations.model.Affirmation
+import com.squareup.picasso.Picasso
 
 class ItemAdapter(
     private val context: Context,
@@ -32,6 +33,7 @@ class ItemAdapter(
         val item = dataset[position]
         holder.textView.text = context.resources.getString(item.stringResourceId)
         holder.imageView.setImageResource(item.imageResourceId)
+        Picasso.get().load("https://static.wikia.nocookie.net/kirby/images/c/c5/Kirby_KSSU.jpg/revision/latest/scale-to-width-down/638?cb=20111110014353").into(holder.imageView)
     }
 
     override fun getItemCount(): Int {
